@@ -4,6 +4,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolePlayground", "Consol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicDrive.Api", "MusicDrive.Api\MusicDrive.Api.csproj", "{74D9A9D3-5C98-484B-8116-9379FCB2E1ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicDrive.Application", "MusicDrive.Application\MusicDrive.Application.csproj", "{10447E8F-74D4-42A8-BADB-9D9C5EB00C55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicDrive.Domain", "MusicDrive.Domain\MusicDrive.Domain.csproj", "{BFF53DF2-7918-4A14-BD0B-FAE7B2E53B99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicDrive.DataAccess", "MusicDrive.DataAccess\MusicDrive.DataAccess.csproj", "{8F562F96-5F2F-400F-9913-FDE4CFD395CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +24,17 @@ Global
 		{74D9A9D3-5C98-484B-8116-9379FCB2E1ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74D9A9D3-5C98-484B-8116-9379FCB2E1ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74D9A9D3-5C98-484B-8116-9379FCB2E1ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10447E8F-74D4-42A8-BADB-9D9C5EB00C55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10447E8F-74D4-42A8-BADB-9D9C5EB00C55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10447E8F-74D4-42A8-BADB-9D9C5EB00C55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10447E8F-74D4-42A8-BADB-9D9C5EB00C55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFF53DF2-7918-4A14-BD0B-FAE7B2E53B99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFF53DF2-7918-4A14-BD0B-FAE7B2E53B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFF53DF2-7918-4A14-BD0B-FAE7B2E53B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFF53DF2-7918-4A14-BD0B-FAE7B2E53B99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F562F96-5F2F-400F-9913-FDE4CFD395CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F562F96-5F2F-400F-9913-FDE4CFD395CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F562F96-5F2F-400F-9913-FDE4CFD395CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F562F96-5F2F-400F-9913-FDE4CFD395CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
