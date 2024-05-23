@@ -7,11 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Queries\Albums\" />
+      <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
     </ItemGroup>
 
     <ItemGroup>
-      <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+      <ProjectReference Include="..\MusicDrive.Domain\MusicDrive.Domain.csproj" />
     </ItemGroup>
 
 </Project>

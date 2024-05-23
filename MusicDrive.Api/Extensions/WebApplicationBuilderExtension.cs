@@ -39,6 +39,16 @@ public static class WebApplicationBuilderExtension
     public static void RegisterApiHandlers(this WebApplicationBuilder builder)
     {
         foreach (var type in Assembly.Load("MusicDrive.Application").GetTypes().Where(x =>
+                     x.Name.EndsWith("QueryHandler") && x.IsAbstract == false && x.IsInterface == false))
+        {
+            foreach (var iface in type.GetInterfaces().Where(x =>
+                         x.IsGenericType && x.GetGenericTypeDefinition() == typeof(IApiQueryHandler<>)))
+            {
+                builder.Services.AddTransient(iface, type);
+            }
+        }
+        
+        foreach (var type in Assembly.Load("MusicDrive.Application").GetTypes().Where(x =>
                      x.Name.EndsWith("CommandHandler") && x.IsAbstract == false && x.IsInterface == false))
         {
             foreach (var iface in type.GetInterfaces().Where(x =>

@@ -2,9 +2,9 @@
 
 namespace MusicDrive.Api.Pipelines;
 
-public abstract class ApiCommandPipeline(IServiceProvider serviceProvider)
+public class ApiCommandPipeline(IServiceProvider serviceProvider)
 {
-    public virtual async Task<IApiResult> Pipe<TRequest>(
+    public async Task<IApiResult> Pipe<TRequest>(
         TRequest request,
         CancellationToken cancellationToken = default) where TRequest : IApiCommand
     {

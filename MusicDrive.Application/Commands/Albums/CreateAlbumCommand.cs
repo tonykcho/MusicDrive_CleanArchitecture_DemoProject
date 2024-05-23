@@ -2,7 +2,7 @@
 
 namespace MusicDrive.Application.Commands.Albums;
 
-public class CreateAlbumCommand : IApiCommand
+public record CreateAlbumCommand : IApiCommand
 {
     public required string AlbumName { get; set; }
 }
