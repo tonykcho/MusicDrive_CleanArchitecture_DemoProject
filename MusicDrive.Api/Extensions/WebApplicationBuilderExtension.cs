@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.HttpLogging;
 using MusicDrive.Application.Commands.Albums;
 using MusicDrive.Application.CommonInterfaces;
+using MusicDrive.DataAccess.DbContexts;
 using Serilog;
 
 namespace MusicDrive.Api.Extensions;
@@ -25,6 +26,11 @@ public static class WebApplicationBuilderExtension
             logging.RequestBodyLogLimit = 4096;
             logging.ResponseBodyLogLimit = 4096;
         });
+    }
+
+    public static void ConfigurePostgreSql(this WebApplicationBuilder builder)
+    {
+        builder.Services.AddDbContext<MusicDriveDbContext>();
     }
 
     public static void RegisterPipelines(this WebApplicationBuilder builder)

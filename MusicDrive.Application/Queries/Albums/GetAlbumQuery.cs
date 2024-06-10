@@ -1,5 +1,7 @@
 ﻿using MusicDrive.Application.Common;
 using MusicDrive.Application.CommonInterfaces;
+using MusicDrive.Application.Dtos;
+using MusicDrive.Application.Mappers;
 using MusicDrive.Domain.Entities;
 
 namespace MusicDrive.Application.Queries.Albums;
@@ -21,6 +23,6 @@ public class GetAlbumQueryHandler : IApiQueryHandler<GetAlbumQuery>
             ReleaseDate = new DateTime()
         };
         
-        return new ApiResult<Album>(album);
+        return new ApiResult<AlbumDto>(AlbumMapper.From(album));
     }
 }
