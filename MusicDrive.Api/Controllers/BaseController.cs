@@ -15,6 +15,7 @@ public abstract class BaseController : ControllerBase
 
         return result switch
         {
+            InvalidRequestApiResult => BadRequest(),
             NoContentApiResult => NoContent(),
             ResourceNotFoundApiResult => NotFound(),
             ResourceAlreadyExistApiResult => BadRequest(),

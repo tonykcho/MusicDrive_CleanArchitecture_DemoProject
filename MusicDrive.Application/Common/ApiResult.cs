@@ -17,6 +17,10 @@ public class ApiResult<TResponse> : IApiResult
     }
 }
 
+public sealed class InvalidRequestApiResult : IApiResult
+{
+}
+
 public sealed class NoContentApiResult : IApiResult
 {
 }
