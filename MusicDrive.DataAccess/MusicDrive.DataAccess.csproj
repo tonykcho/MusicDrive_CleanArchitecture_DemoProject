@@ -7,7 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\MusicDrive.Application\MusicDrive.Application.csproj" />
       <ProjectReference Include="..\MusicDrive.Domain\MusicDrive.Domain.csproj" />
     </ItemGroup>
 

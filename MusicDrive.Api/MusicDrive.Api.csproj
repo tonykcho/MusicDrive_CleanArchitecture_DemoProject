@@ -23,7 +23,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\MusicDrive.Application\MusicDrive.Application.csproj" />
-      <ProjectReference Include="..\MusicDrive.DataAccess\MusicDrive.DataAccess.csproj" />
     </ItemGroup>
 
 </Project>

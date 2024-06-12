@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.HttpLogging;
 using MusicDrive.Application.Commands.Albums;
 using MusicDrive.Application.CommonInterfaces;
+using MusicDrive.DataAccess.Common;
 using MusicDrive.DataAccess.DbContexts;
+using MusicDrive.DataAccess.Repositories;
 using Serilog;
 
 namespace MusicDrive.Api.Extensions;
@@ -63,5 +65,10 @@ public static class WebApplicationBuilderExtension
                 builder.Services.AddTransient(iface, type);
             }
         }
+    }
+
+    public static void RegisterApiRepositories(this WebApplicationBuilder builder)
+    {
+        builder.Services.AddScoped<IAlbumRepository, AlbumRepository>();
     }
 }

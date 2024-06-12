@@ -1,6 +1,8 @@
 ﻿using FluentValidation;
 using MusicDrive.Application.Common;
 using MusicDrive.Application.CommonInterfaces;
+using MusicDrive.DataAccess.Common;
+using MusicDrive.Domain.Entities;
 
 namespace MusicDrive.Application.Commands.Albums;
 
@@ -17,7 +19,7 @@ public record CreateAlbumCommand : IApiCommand
     }
 }
 
-public class CreateAlbumCommandHandler(IValidator<CreateAlbumCommand> validator)
+public class CreateAlbumCommandHandler(IAlbumRepository albumRepository, IValidator<CreateAlbumCommand> validator)
     : IApiCommandHandler<CreateAlbumCommand>
 {
     public async Task<IApiResult> Handle(CreateAlbumCommand request, CancellationToken cancellationToken)
@@ -28,7 +30,24 @@ public class CreateAlbumCommandHandler(IValidator<CreateAlbumCommand> validator)
         {
             return new InvalidRequestApiResult();
         }
-        
-        throw new NotImplementedException();
+
+        var album = new Album()
+        {
+           AlbumName = request.AlbumName,
+           CreatedAt = DateTime.UtcNow
+        };
+
+        await albumRepository.AddAsync(album, cancellationToken);
+
+        var success = await albumRepository.SaveChangesAsync(cancellationToken);
+
+        if (success)
+        {
+            return new NoContentApiResult();
+        }
+        else
+        {
+            throw new NotImplementedException();
+        }
     }
 }
