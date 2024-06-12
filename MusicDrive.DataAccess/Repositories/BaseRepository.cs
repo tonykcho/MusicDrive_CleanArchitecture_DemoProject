@@ -24,9 +24,11 @@ public abstract class BaseRepository<T>(MusicDriveDbContext dbContext) : IBaseRe
         return await dbContext.Set<T>().SingleOrDefaultAsync(data => data.Guid == guid, cancellationToken);
     }
 
-    public Task<IEnumerable<T>> ListAsync(CancellationToken cancellationToken)
+    public async Task<IEnumerable<T>> ListAsync(CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        cancellationToken.ThrowIfCancellationRequested();
+
+        return await dbContext.Set<T>().ToListAsync(cancellationToken);
     }
 
     public async Task AddAsync(T entity, CancellationToken cancellationToken)
