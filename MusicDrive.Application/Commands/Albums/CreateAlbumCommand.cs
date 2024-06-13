@@ -34,7 +34,7 @@ public class CreateAlbumCommandHandler(IAlbumRepository albumRepository, IValida
         var album = new Album()
         {
            AlbumName = request.AlbumName,
-           CreatedAt = DateTime.UtcNow
+           ReleaseDate = DateTime.UtcNow
         };
 
         await albumRepository.AddAsync(album, cancellationToken);

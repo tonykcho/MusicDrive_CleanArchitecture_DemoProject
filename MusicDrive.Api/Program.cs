@@ -24,3 +24,5 @@ app.MapControllers();
 app.UseHttpLogging();
 
 app.Run();
+
+public partial class Program { }

@@ -3,7 +3,6 @@ using MusicDrive.Application.CommonInterfaces;
 using MusicDrive.Application.Dtos;
 using MusicDrive.Application.Mappers;
 using MusicDrive.DataAccess.Common;
-using MusicDrive.Domain.Entities;
 
 namespace MusicDrive.Application.Queries.Albums;
 
